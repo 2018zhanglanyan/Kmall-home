@@ -5,9 +5,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath="/";
 
 //生成HtmlWebpackPlugin配置
-const getHtmlConfig = (name)=>({
+const getHtmlConfig = (name,title)=>({
 	filename: name+'.html',
 	template: './src/view/'+name+'.html',
+	title:title,
 	inject:true,
 	hash:true,
 	chunks:['common',name]
@@ -20,7 +21,9 @@ module.exports={
 	entry:{
 		'common':'./src/pages/common/index.js',
 		'index':'./src/pages/index/index.js',
-		'user-login':'./src/pages/user-login/index.js'
+		'user-login':'./src/pages/user-login/index.js',
+		'user-register':'./src/pages/user-register/index.js',
+		'result':'./src/pages/result/index.js'
 	},
 	/*
 	//额外配置jquery的模板
@@ -89,8 +92,10 @@ module.exports={
 	      filename: "css/[name].css",
 	      chunkFilename: "[id].css"
 	    }),
-		new HtmlWebpackPlugin(getHtmlConfig('index')),
-		new HtmlWebpackPlugin(getHtmlConfig('user-login')),
+		new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
+		new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+		new HtmlWebpackPlugin(getHtmlConfig('result','结果提示')),
 		
 	], 
 	devServer: {
