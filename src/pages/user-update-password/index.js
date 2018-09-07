@@ -1,9 +1,17 @@
-require('./index.css')
-require('pages/common/logo')
-require('pages/common/footer')
+require('./index.css');
 
-var _util = require('util')
-var _user = require('../../service/user/')
+require('pages/common/logo');
+require('pages/common/footer');
+require('pages/common/side');
+require('pages/common/search');
+
+
+require('pages/common/nav');
+const _user =  require('../../service/user');
+
+const _util = require('util');
+const _side = require('pages/common/side');
+
 var formErr = {
 	show:function(msg){
 		$('.error-item').show().find('.error-msg').text(msg)
@@ -13,9 +21,10 @@ var formErr = {
 	},
 }
 
-//登陆页面逻辑
+//修改密码页面逻辑
 var page = {
 	init:function(){
+		_side.render('user-update-password');
 		this.bindEvent();
 	},
 	//绑定事件
@@ -24,12 +33,17 @@ var page = {
 		$('#btn-submit').on('click',function(){
 			_self.submit();
 		})
+		$('#btn-submit').on('keyup',function(){
+			if(e.keyCode == 13){
+				_self.submit();
+			}
+		})
 	},
 	submit:function(){
 		//1.获取数据
 		var formData = {
-			username:$.trim($('[name="username"]').val()),
-			password:$.trim($('[name="password"]').val())
+			password:$.trim($('[name="password"]').val()),
+			repassword:$.trim($('[name="repassword"]').val())
 		}
 		//2.验证数据
 		var validateResult = this.validate(formData);
@@ -38,35 +52,20 @@ var page = {
 		//验证成功
 		if(validateResult.status){
 			formErr.hide()
-			_user.login(formData,function(){
-				window.location.href = _util.getParamFromUrl('redirect') || './index.html'
-			},function(message){
+			_user.updatePassword(formData,function(){
+				window.location.href = './result.html?type=updatePassword'
+			},function(){
 				formErr.show(message)
 			})
 		}else{
 			formErr.show(validateResult.msg)
 		}
-		$('#btn-submit').on('keyup',function(){
-			if(e.keyCode == 13){
-				_self.submit();
-			}
-		})
 		//验证失败
 	},
 	validate:function(formData){
 		var result = {
 			status:false,
 			msg:''
-		}
-		//验证用户名不能为空
-		if(!_util.validate(formData.username,"require")){
-			result.msg = '用户名不能为空';
-			return result;
-		}
-		//验证用户名格式错误
-		if(!_util.validate(formData.username,"username")){
-			result.msg = '用户名格式错误';
-			return result;
 		}
 		//验证密码不能为空
 		if(!_util.validate(formData.password,"require")){
@@ -78,6 +77,10 @@ var page = {
 			result.msg = '密码格式错误';
 			return result;
 		}
+		if(formData.password != formData.repassword){
+			result.msg = '两次密码不一致';
+			return result;
+		}
 
 		result.status = true;
 		return result;
@@ -87,4 +90,5 @@ var page = {
 $(function(){
 	page.init()
 })
+
 
