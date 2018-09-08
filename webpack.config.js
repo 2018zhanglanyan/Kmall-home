@@ -25,7 +25,8 @@ module.exports={
 		'user-login':'./src/pages/user-login/index.js',
 		'user-register':'./src/pages/user-register/index.js',
 		'user-update-password':'./src/pages/user-update-password/index.js',
-		'result':'./src/pages/result/index.js'
+		'result':'./src/pages/result/index.js',
+		'list':'./src/pages/list/index.js',
 	},
 	/*
 	//额外配置jquery的模板
@@ -47,6 +48,7 @@ module.exports={
 			service:path.resolve(__dirname,'./src/service/'),
 			node_modules:path.resolve(__dirname,'./node_modules/'),
 			common:path.resolve(__dirname,'./src/common/'),
+			images:path.resolve(__dirname,'./src/images/'),
 		},
 	},
 	module:{
@@ -101,11 +103,13 @@ module.exports={
 	      chunkFilename: "[id].css"
 	    }),
 		new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+		new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
 		new HtmlWebpackPlugin(getHtmlConfig('result','结果提示')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-content','用户中心')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),
+		new HtmlWebpackPlugin(getHtmlConfig('list','详情页面')),
 		
 	], 
 	devServer: {

@@ -4,11 +4,13 @@
 	background: #ccc;
 }
 .links{
-	margin-bottom: 20px;
+	/*padding: 20px;*/
 }
 .links .link{
-	padding: 0 10px;
+	padding: 0px 10px;
 }
+
 .copyright{
 	color:#999;
+	padding: 10px 0px;
 }
