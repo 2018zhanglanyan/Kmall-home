@@ -7,7 +7,7 @@ require('./index.css')
 var _util = require('util')
 var keywordTpl = require('./keywords.tpl')
 var carouselTpl = require('./carousel.tpl')
-var floorTpl = require('./floor.tpl')
+var floorlTpl = require('./floor.tpl')
 
 
 var page = {
@@ -24,46 +24,57 @@ var page = {
 		{item:[{name:'箱包'},{name:'行李箱'}]}
 	],
 	carousel:[
-		{categoryId:'1111',image:require('images/carousel/carousel-1.jpg')},
-		{categoryId:'2222',image:require('images/carousel/carousel-2.jpg')},
-		{categoryId:'3333',image:require('images/carousel/carousel-3.jpg')},
-		{categoryId:'4444',image:require('images/carousel/carousel-4.jpg')},
-		{categoryId:'5555',image:require('images/carousel/carousel-5.jpg')},
-		{categoryId:'6666',image:require('images/carousel/carousel-6.jpg')},
-		{categoryId:'7777',image:require('images/carousel/carousel-7.jpg')},
-		{categoryId:'8888',image:require('images/carousel/carousel-8.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-1.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-2.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-3.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-4.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-5.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-6.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-7.jpg')},
+		{categoryId:'5b95dc5d4db6202e10841160',image:require('images/carousel/carousel-8.jpg')},
 	],
 	floor:[
 		{
-			title:'F1 热门手机',
+			title:'F1 数码',
 			item:[
-				{categoryId:'1111',text:'热门手机',image:require('images/floor/floor-1-01.jpg')},
-				{categoryId:'2222',text:'热门手机',image:require('images/floor/floor-1-02.jpg')},
-				{categoryId:'3333',text:'热门手机',image:require('images/floor/floor-1-03.jpg')},
-				{categoryId:'4444',text:'热门手机',image:require('images/floor/floor-1-04.jpg')},
-				{categoryId:'5555',text:'热门手机',image:require('images/floor/floor-1-05.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'华为',image:require('images/floor/floor-1-01.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'小米',image:require('images/floor/floor-1-02.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'荣耀',image:require('images/floor/floor-1-03.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'vivo',image:require('images/floor/floor-1-04.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'oppo',image:require('images/floor/floor-1-05.jpg')},
 			],
 		},
 		{
-			title:'F2 家用家电',
+			title:'F2 服装',
 			item:[
-				{categoryId:'1111',text:'家用家电',image:require('images/floor/floor-1-06.jpg')},
-				{categoryId:'2222',text:'家用家电',image:require('images/floor/floor-1-07.jpg')},
-				{categoryId:'3333',text:'家用家电',image:require('images/floor/floor-1-08.jpg')},
-				{categoryId:'4444',text:'家用家电',image:require('images/floor/floor-1-09.jpg')},
-				{categoryId:'5555',text:'家用家电',image:require('images/floor/floor-1-10.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'裙子',image:require('images/floor/floor-2-01.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'体恤',image:require('images/floor/floor-2-02.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'蝙蝠衫',image:require('images/floor/floor-2-03.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'卫衣',image:require('images/floor/floor-2-04.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'衬衫',image:require('images/floor/floor-2-05.jpg')},
 			],
 		},
 		{
-			title:'F3 智能数码',
+			title:'F3 箱包',
 			item:[
-				{categoryId:'1111',text:'智能数码',image:require('images/floor/floor-1-11.jpg')},
-				{categoryId:'2222',text:'智能数码',image:require('images/floor/floor-1-12.jpg')},
-				{categoryId:'3333',text:'智能数码',image:require('images/floor/floor-1-13.jpg')},
-				{categoryId:'4444',text:'智能数码',image:require('images/floor/floor-1-14.jpg')},
-				{categoryId:'5555',text:'智能数码',image:require('images/floor/floor-1-15.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'男包',image:require('images/floor/floor-3-01.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'女包',image:require('images/floor/floor-3-02.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'行李箱',image:require('images/floor/floor-3-03.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'双肩包',image:require('images/floor/floor-3-04.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'单肩包',image:require('images/floor/floor-3-05.jpg')},
 			],
-		}
+		},
+		{
+			title:'F4 眼镜',
+			item:[
+				{categoryId:'5b95dc5d4db6202e10841160',text:'防辐射',image:require('images/floor/floor-4-01.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'司机眼镜',image:require('images/floor/floor-4-02.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'3D眼镜',image:require('images/floor/floor-4-03.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'色盲眼镜',image:require('images/floor/floor-4-04.jpg')},
+				{categoryId:'5b95dc5d4db6202e10841160',text:'太阳镜',image:require('images/floor/floor-4-05.jpg')},
+			],
+		},
+		
 	],
 	init:function(){
 		this.loadKeywords()
@@ -93,18 +104,12 @@ var page = {
 	    	var direction = $(this).hasClass('next') ? 'next' : 'prev';
 	    	$carousel.data('unslider')[direction]();
  	    })
-
-	    
-	    
 	},
-
 	loadFloor:function(){
-		
-		var html = _util.render(floorTpl,{
+		var html = _util.render(floorlTpl,{
 			floor:this.floor
 		});
 		$(".floor-wrap").html(html)
-	    
 	}
 }
 

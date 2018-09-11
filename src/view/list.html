@@ -3,17 +3,15 @@
 <head>
 	<%=require('html-loader!./common/header.html')%>
 	<title>
-		<% htmlWebpackPlugin.options.title %> -shopmall电商平台
+		<%= htmlWebpackPlugin.options.title %> - shopmall电商平台
 	</title>
 </head>
 <body>
 	<%=require('html-loader!./common/nav.html')%>
 	<%=require('html-loader!./common/search.html')%>
-	
-
 	<div class="list">
 		<div class="container clearfix">
-			<ul class="sort">
+			<ul class="sort clearfix">
 				<li class="sort-item default active">默认排序</li>
 				<li class="sort-item price asc">
 					按价格
@@ -21,8 +19,15 @@
 					<i class="fa fa-sort-desc"></i>
 				</li>
 			</ul>
+			<div class="product-list-box clearfix">
+				
+			</div>
+			<div class="pagination-box">
+				
+			</div>
 		</div>
 	</div>
+
 
 
 
