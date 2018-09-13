@@ -26,7 +26,7 @@
 		{{/checked}}
 	</li>
 	<li class="product-info">
-		<a href="./detai.html?productId={{product._id}}" class="link">
+		<a href="./detail.html?productId={{product._id}}" class="link" target="_blank">
 			<img src="{{product.image}}" alt=""> 
 			<span>{{product.name}}</span>
 		</a>
@@ -35,7 +35,9 @@
 		￥{{product.price}}
 	</li>
 	<li class="product-count">
-		<span class="count-btn minus">-</span><input type="text" value="{{count}}" class="count-input"><span class="count-btn plus">+</span>
+		<span class="count-btn minus">-</span>
+		<input type="text" value="{{count}}" class="count-input" data-stoke={{product.stoke}}>
+		<span class="count-btn plus">+</span>
 	</li>
 	<li class="product-totalPrice">
 		￥{{totalPrice}}
@@ -67,11 +69,11 @@
 	<li class="product-submit">
 		<span class="total-price-text">总价:</span>
 		<span class="total-price">￥{{totalCartPrice}}</span>
-		<a href="javascript:;" class="btns btn-submit link">去结算</a>
+		<span class="btns btn-submit link">去结算</span>
 	</li>
 </ul>
 {{/notEmpty}}
 {{^notEmpty}}
-<p class="empty-messafe">购物车空空如也！！！<a href="/" class="btn">立即去购物</a></p>
+<p class="empty-message">购物车空空如也！！！<a href="/" class="btn">立即去购物</a></p>
 
 {{/notEmpty}}
